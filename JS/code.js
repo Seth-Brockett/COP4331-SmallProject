@@ -192,9 +192,8 @@ function search()
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
-	{
-			xhr.send(jsonPayload);
-			var jsonObject = JSON.parse(xhr.responseText);
+	{			
+			var jsonObject = xhr.response.json;
 
 			contactList = jsonObject.message.searchResults;
 			displaySearch(contactList);
